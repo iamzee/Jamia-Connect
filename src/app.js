@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { firebase } from './firebase/configFirebase';
 import { store } from './store/configStore';
-import { login, startLogin, logout, startLogout } from './actions/auth';
+import { login, logout } from './actions/auth';
+
+import Header from './components/Header';
+import NotesDashboard from './components/NotesDashboard';
+import NotesList from './components/NotesList';
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -17,11 +23,18 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 const App = () => (
-    <div>
-        <h1>Jamians Rivet</h1>
-        <button onClick={startLogin}>Login with Google</button>
-        <button onClick={startLogout}>Logout</button>
-    </div>
+    <BrowserRouter>
+        <div>
+            <Header />
+            <Route path="/notes" component={NotesDashboard} />
+            <Route path="/notes/:branch" component={NotesList} />
+        </div>
+    </BrowserRouter>
 );
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('app')
+);
