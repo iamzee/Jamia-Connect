@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import { storage } from './../firebase/configFirebase';
 import { startAddNote } from './../actions/notes';
@@ -82,7 +83,8 @@ class UploadNotesForm extends React.Component {
                                     teacher: this.state.teacher,
                                     downloadURL,
                                     uid: this.props.user.uid,
-                                    displayName: this.props.user.displayName
+                                    displayName: this.props.user.displayName,
+                                    uploadedAt: moment().valueOf()
                                 })
                             );
                         });

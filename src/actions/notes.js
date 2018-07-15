@@ -28,7 +28,6 @@ export const setNotes = notes => ({
 
 export const startSetNotes = ({ branch }) => {
     return dispatch => {
-        console.log('branch', branch);
         return database
             .ref(`notes/${branch}`)
             .once('value')
