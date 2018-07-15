@@ -1,0 +1,12 @@
+.button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: $s-size;
+
+    &--login {
+        background-color: fade-out(#dd4b39, 0.3);
+    }
+}
