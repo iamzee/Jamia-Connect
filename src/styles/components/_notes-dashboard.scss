@@ -1,0 +1,46 @@
+.notes-dashboard {
+    height: 80rem;
+    flex: 1;
+    background: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+    );
+    padding: $m-size;
+    &__content {
+        background-color: $color-grey-light-3;
+        border-radius: 5px;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $s-size;
+        border-bottom: 2px solid $color-grey-dark-2;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    &__branches {
+        padding: $m-size;
+        display: flex;
+        justify-content: space-evenly;
+        @media screen and (max-width: 1000px) {
+            flex-wrap: wrap;
+        }
+    }
+    &__branches-link:link,
+    &__branches-link:visited {
+        color: $color-grey-dark-1;
+        text-decoration: none;
+        font-size: 1.6rem;
+        padding: $s-size;
+        border: 1px solid $color-primary;
+        border-radius: 3px;
+        @media screen and (max-width: 1000px) {
+            margin-right: $m-size;
+            margin-bottom: $m-size;
+        }
+    }
+}

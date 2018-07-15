@@ -1,12 +1,14 @@
 .navigation {
-    height: 50rem;
-
     flex: 0 0 18%;
     background-color: $color-grey-dark-1;
 
     &__list {
         margin-top: $l-size;
         font-size: 2rem;
+
+        @media screen and (max-width: 1000px) {
+            margin: 0;
+        }
     }
 
     &__list-item {

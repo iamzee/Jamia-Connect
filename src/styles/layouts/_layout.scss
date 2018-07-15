@@ -4,8 +4,16 @@
 
     background: $color-grey-light-2;
     border-radius: 5px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 0 auto;
+    }
 }
 
 .content {
     display: flex;
+
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
 }
