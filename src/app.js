@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
+import './styles/styles.scss';
 import { firebase, database } from './firebase/configFirebase';
 import { store } from './store/configStore';
 import { login, logout } from './actions/auth';
