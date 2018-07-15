@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
 
 import { firebase } from './firebase/configFirebase';
 import { store } from './store/configStore';
 import { login, logout } from './actions/auth';
 
-import Header from './components/Header';
-import NotesDashboard from './components/NotesDashboard';
-import NotesList from './components/NotesList';
+import AppRouter from './routers/AppRouter';
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -22,19 +19,9 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-const App = () => (
-    <BrowserRouter>
-        <div>
-            <Header />
-            <Route path="/notes" component={NotesDashboard} />
-            <Route path="/notes/:branch" component={NotesList} />
-        </div>
-    </BrowserRouter>
-);
-
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <AppRouter />
     </Provider>,
     document.getElementById('app')
 );
