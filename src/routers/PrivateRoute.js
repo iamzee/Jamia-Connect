@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 import Header from './../components/Header';
+import Navigation from './../components/Navigation';
 
 const PrivateRoute = ({ isAuthenticated, component: Component, ...rest }) => (
     <Route
         {...rest}
         component={props =>
             isAuthenticated ? (
-                <div>
+                <div className="container">
                     <Header />
-                    <Component {...props} />
+                    <div className="content">
+                        <Navigation />
+                        <Component {...props} />
+                    </div>
                 </div>
             ) : (
                 <Redirect to="/" />

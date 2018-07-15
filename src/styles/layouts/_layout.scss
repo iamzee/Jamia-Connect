@@ -1,0 +1,11 @@
+.container {
+    max-width: 120rem;
+    margin: $xl-size auto;
+
+    background: $color-grey-light-2;
+    border-radius: 5px;
+}
+
+.content {
+    display: flex;
+}
