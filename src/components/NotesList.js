@@ -41,10 +41,9 @@ class NotesList extends React.Component {
     render() {
         const notes = this.state.notes;
         return (
-            <div>
+            <div className="notes-list">
                 {notes.length > 0 ? (
-                    <div>
-                        <h3>{this.props.match.params.branch}</h3>
+                    <div className="notes-list-container">
                         {this.props.notes.map(note => (
                             <NotesListItem key={note.noteId} note={note} />
                         ))}
