@@ -99,8 +99,9 @@ class UploadNotesForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className="upload-form" onSubmit={this.onSubmit}>
                 <select
+                    className="upload-form__input upload-form__input--select"
                     value={this.state.branch}
                     onChange={this.onBranchChange}
                 >
@@ -113,19 +114,30 @@ class UploadNotesForm extends React.Component {
                     <option value="civil">Civil Engineering</option>
                 </select>
                 <input
+                    className="upload-form__input"
                     type="text"
                     placeholder="Topic"
                     value={this.state.topic}
                     onChange={this.onTopicChange}
                 />
                 <input
+                    className="upload-form__input"
                     type="text"
                     placeholder="Teacher"
                     value={this.state.teacher}
                     onChange={this.onTeacherChange}
                 />
-                <input type="file" onChange={this.onFileChange} />
-                <button type="submit">Upload</button>
+                <input
+                    className="upload-form__input-file"
+                    type="file"
+                    onChange={this.onFileChange}
+                />
+                <button
+                    className="upload-form__input upload-form__upload-button"
+                    type="submit"
+                >
+                    Upload
+                </button>
             </form>
         );
     }

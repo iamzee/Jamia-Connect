@@ -1,0 +1,52 @@
+.upload-form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        display: block;
+        outline: none;
+        padding: $s-size;
+        font-size: 1.6rem;
+        background-color: #fff;
+        color: $color-grey-dark-1;
+        border: none;
+        border-bottom: 2px solid $color-primary;
+        border-radius: 3px;
+        margin-bottom: $s-size;
+
+        &--select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+
+            background: url('/images/select.png') no-repeat 95% center;
+            background-color: #fff;
+        }
+
+        &-file::-webkit-file-upload-button {
+            display: block;
+            outline: none;
+            padding: $s-size;
+            font-size: 1.6rem;
+            background-color: #fff;
+            color: $color-grey-dark-1;
+            border: none;
+            border-bottom: 2px solid $color-primary;
+            border-radius: 3px;
+            margin-bottom: $s-size;
+        }
+    }
+
+    &__upload-button {
+        color: $color-primary;
+        border: 2px solid $color-primary;
+    }
+
+    &__modal-close-button {
+        width: 100%;
+        color: #f93636;
+        border: 2px solid #f93636;
+    }
+}
