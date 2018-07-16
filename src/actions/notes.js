@@ -7,7 +7,7 @@ export const addNote = note => ({
 
 export const startAddNote = note => {
     return dispatch => {
-        database
+        return database
             .ref(`notes/${note.branch}`)
             .push(note)
             .then(ref => {

@@ -1,5 +1,6 @@
 .ReactModalPortal > div {
     opacity: 0;
+    z-index: 11;
 }
 
 .ReactModalPortal .ReactModal__Overlay {
@@ -18,7 +19,7 @@
 }
 
 .modal {
-    background-color: $color-grey-light-3;
+    background-color: $color-grey-dark-3;
     outline: none;
     padding: $l-size;
     border-radius: 5px;

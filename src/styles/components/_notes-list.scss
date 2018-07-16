@@ -19,6 +19,8 @@
     border-radius: 3px;
     padding: $s-size;
     box-shadow: 0 $s-size $m-size rgba(0, 0, 0, 0.3);
+    margin-right: $s-size;
+    margin-bottom: $m-size;
     @media screen and (max-width: 480px) {
         margin-right: $s-size;
         margin-bottom: $s-size;
@@ -34,7 +36,7 @@
             font-size: 2rem;
             font-weight: 400;
             text-decoration: none;
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width: 1200px) {
                 color: $color-primary;
                 border-bottom: 1px solid $color-primary;
             }

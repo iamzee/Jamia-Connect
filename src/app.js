@@ -8,6 +8,22 @@ import { store } from './store/configStore';
 import { login, logout } from './actions/auth';
 
 import AppRouter from './routers/AppRouter';
+import LoaderComponent from './components/LoaderComponent';
+
+let hasRendered = false;
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render(
+            <Provider store={store}>
+                <AppRouter />
+            </Provider>,
+            document.getElementById('app')
+        );
+        hasRendered = true;
+    }
+};
+
+ReactDOM.render(<LoaderComponent />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -16,6 +32,7 @@ firebase.auth().onAuthStateChanged(user => {
             .once('value')
             .then(snapshot => {
                 if (user.uid === snapshot.key) {
+                    renderApp();
                 } else {
                     database
                         .ref(`users/${user.uid}`)
@@ -26,6 +43,7 @@ firebase.auth().onAuthStateChanged(user => {
                         })
                         .then(() => {
                             store.dispatch(login(user));
+                            renderApp();
                         });
                 }
             });
@@ -34,10 +52,3 @@ firebase.auth().onAuthStateChanged(user => {
         store.dispatch(logout());
     }
 });
-
-ReactDOM.render(
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>,
-    document.getElementById('app')
-);

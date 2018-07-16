@@ -49,7 +49,7 @@ class NotesList extends React.Component {
                         ))}
                     </div>
                 ) : (
-                    <p>Loading notes...</p>
+                    <p style={{ fontSize: '3.2rem' }}>Fetching notes...</p>
                 )}
             </div>
         );

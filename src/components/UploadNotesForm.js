@@ -14,14 +14,27 @@ class UploadNotesForm extends React.Component {
             topic: '',
             teacher: '',
             file: null,
-            error: ''
+            message: '',
+            percentage: 0
         };
 
+        this.handleButtonText = this.handleButtonText.bind(this);
         this.onBranchChange = this.onBranchChange.bind(this);
         this.onTopicChange = this.onTopicChange.bind(this);
         this.onTeacherChange = this.onTeacherChange.bind(this);
         this.onFileChange = this.onFileChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    handleButtonText() {
+        const { percentage } = this.state;
+        if (percentage > 0 && percentage !== 100) {
+            return `Uploading (${percentage}%)`;
+        } else if (percentage === 100) {
+            return 'File Uploaded';
+        } else if (percentage === 0) {
+            return `Upload`;
+        }
     }
 
     onBranchChange(e) {
@@ -53,7 +66,7 @@ class UploadNotesForm extends React.Component {
             !this.state.teacher ||
             !this.state.file
         ) {
-            this.setState(() => ({ error: 'All fields are necessary' }));
+            this.setState(() => ({ message: 'All fields are necessary' }));
         } else {
             const task = storage
                 .ref(`notes/${this.state.branch}/${this.state.file.name}`)
@@ -64,10 +77,11 @@ class UploadNotesForm extends React.Component {
                 snapshot => {
                     const percentage =
                         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    this.setState(() => ({ percentage }));
                     console.log('percentage', percentage);
                 },
                 e => {
-                    console.log('Error', e);
+                    console.log('message', e);
                 },
                 () => {
                     storage
@@ -87,13 +101,22 @@ class UploadNotesForm extends React.Component {
                                     uploadedAt: moment().valueOf()
                                 })
                             );
+                        })
+                        .then(() => {
+                            this.setState(() => ({
+                                branch: '',
+                                topic: '',
+                                teacher: '',
+                                file: null,
+                                percentage: 0
+                            }));
                         });
 
                     console.log('Completed');
                 }
             );
 
-            this.setState(() => ({ error: '' }));
+            this.setState(() => ({ message: '' }));
         }
     }
 
@@ -136,8 +159,11 @@ class UploadNotesForm extends React.Component {
                     className="upload-form__input upload-form__upload-button"
                     type="submit"
                 >
-                    Upload
+                    {this.handleButtonText()}
                 </button>
+                {this.state.message && (
+                    <p className="upload-form__message">{this.state.message}</p>
+                )}
             </form>
         );
     }

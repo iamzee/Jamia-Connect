@@ -49,4 +49,10 @@
         color: #f93636;
         border: 2px solid #f93636;
     }
+
+    &__message {
+        font-size: 1.2rem;
+        color: #f93636;
+        margin-bottom: $s-size;
+    }
 }
