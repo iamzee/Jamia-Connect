@@ -1,27 +1,4 @@
-.notes-dashboard {
-    height: 80rem;
-    flex: 1;
-    background: linear-gradient(
-        to right bottom,
-        $color-primary-light,
-        $color-primary-dark
-    );
-    padding: $m-size;
-    &__content {
-        background-color: $color-grey-light-3;
-        border-radius: 5px;
-    }
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: $s-size;
-        border-bottom: 2px solid $color-grey-dark-2;
-    }
-    &__title {
-        font-size: 2rem;
-        font-weight: 300;
-    }
+.dashboard--notes {
     &__branches {
         padding: $m-size;
         display: flex;

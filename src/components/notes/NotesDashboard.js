@@ -24,15 +24,13 @@ class NotesDashboard extends React.Component {
 
     render() {
         return (
-            <div className="notes-dashboard">
-                <div className="notes-dashboard__content">
-                    <div className="notes-dashboard__header">
-                        <h2 className="notes-dashboard__title">
-                            Notes Dashboard
-                        </h2>
+            <div className="dashboard dashboard--notes">
+                <div className="dashboard__content">
+                    <div className="dashboard__header">
+                        <h2 className="dashboard__title">Notes Dashboard</h2>
                         <button
                             onClick={this.handleUploadButton}
-                            className="button notes-dashboard__button"
+                            className="button dashboard--notes__button"
                         >
                             Upload Notes
                         </button>
@@ -41,39 +39,39 @@ class NotesDashboard extends React.Component {
                         modalOpen={this.state.modalOpen}
                         handleModalClose={this.handleModalClose}
                     />
-                    <div className="notes-dashboard__branches">
+                    <div className="dashboard--notes__branches">
                         <Link
-                            className="notes-dashboard__branches-link"
+                            className="dashboard--notes__branches-link"
                             to="/notes/first_year"
                         >
                             First Year
                         </Link>
                         <Link
-                            className="notes-dashboard__branches-link"
+                            className="dashboard--notes__branches-link"
                             to="/notes/computer_science"
                         >
                             Computer Science
                         </Link>
                         <Link
-                            className="notes-dashboard__branches-link"
+                            className="dashboard--notes__branches-link"
                             to="/notes/electrical"
                         >
                             Electrical
                         </Link>
                         <Link
-                            className="notes-dashboard__branches-link"
+                            className="dashboard--notes__branches-link"
                             to="/notes/electronics"
                         >
                             Electronics
                         </Link>
                         <Link
-                            className="notes-dashboard__branches-link"
+                            className="dashboard--notes__branches-link"
                             to="/notes/mechanical"
                         >
                             Mechanical
                         </Link>
                         <Link
-                            className="notes-dashboard__branches-link"
+                            className="dashboard--notes__branches-link"
                             to="/notes/civil"
                         >
                             Civil

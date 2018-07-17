@@ -13,20 +13,27 @@
 
     &__list-item {
         position: relative;
-    }
 
-    &__list-item::before {
-        content: '';
+        &::before {
+            content: '';
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 3px;
-        background-color: $color-primary;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
 
-        transform: scaleY(0);
-        transition: transform 0.2s, width 0.4s 0.2s ease-out;
+            transform: scaleY(0);
+            transition: transform 0.2s, width 0.4s 0.2s ease-out;
+        }
+
+        &--notes::before {
+            background-color: $color-primary;
+        }
+
+        &--confessions::before {
+            background-color: $color-tertiary;
+        }
     }
 
     &__list-item:hover::before {

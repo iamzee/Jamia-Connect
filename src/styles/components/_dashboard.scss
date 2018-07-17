@@ -1,0 +1,36 @@
+.dashboard {
+    flex: 1;
+
+    padding: $m-size;
+
+    &--notes {
+        background: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+        );
+    }
+    &--confessions {
+        background: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+        );
+    }
+
+    &__content {
+        background-color: $color-grey-light-3;
+        border-radius: 5px;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $s-size;
+        border-bottom: 2px solid $color-grey-dark-2;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
