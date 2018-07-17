@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 
 import LoginPage from './../components/LoginPage';
-import NotesDashboard from './../components/NotesDashboard';
-import NotesList from './../components/NotesList';
+import NotesDashboard from './../components/notes/NotesDashboard';
+import NotesList from './../components/notes/NotesList';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 

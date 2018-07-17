@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import NotesListItem from './NotesListItem';
-import { startSetNotes } from './../actions/notes';
+import { startSetNotes } from './../../actions/notes';
 
 class NotesList extends React.Component {
     constructor(props) {

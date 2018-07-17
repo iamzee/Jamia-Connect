@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import { storage } from './../firebase/configFirebase';
-import { startAddNote } from './../actions/notes';
+import { storage } from './../../firebase/configFirebase';
+import { startAddNote } from './../../actions/notes';
 
 class UploadNotesForm extends React.Component {
     constructor(props) {
