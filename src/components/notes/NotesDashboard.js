@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NotesFormModal from './NotesFormModal';
+import Modal from './../Modal';
+
+import UploadNotesForm from './UploadNotesForm';
 
 class NotesDashboard extends React.Component {
     constructor(props) {
@@ -35,9 +37,10 @@ class NotesDashboard extends React.Component {
                             Upload Notes
                         </button>
                     </div>
-                    <NotesFormModal
+                    <Modal
                         modalOpen={this.state.modalOpen}
                         handleModalClose={this.handleModalClose}
+                        component={UploadNotesForm}
                     />
                     <div className="dashboard--notes__branches">
                         <Link

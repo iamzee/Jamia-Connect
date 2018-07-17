@@ -1,19 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
-import UploadNotesForm from './UploadNotesForm';
 
-const NotesFormModal = props => (
+const NotesFormModal = ({
+    modalOpen,
+    handleModalClose,
+    component: Component
+}) => (
     <Modal
-        isOpen={props.modalOpen}
-        onRequestClose={props.handleModalClose}
+        isOpen={modalOpen}
+        onRequestClose={handleModalClose}
         contentLabel="Upload Notes Form"
         closeTimeoutMS={200}
         className="modal"
     >
-        <UploadNotesForm />
+        <Component />
         <button
             className="upload-form__input upload-form__modal-close-button"
-            onClick={props.handleModalClose}
+            onClick={handleModalClose}
         >
             Close
         </button>
