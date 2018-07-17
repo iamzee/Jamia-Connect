@@ -3,6 +3,8 @@
 
 @import './layouts/layout';
 
+@import './components/list';
+@import './components/item';
 @import './components/dashboard';
 @import './components/loader';
 @import './components/buttons';
@@ -10,6 +12,5 @@
 @import './components/header';
 @import './components/navigation';
 @import './components/notes/notes-dashboard';
-@import './components/notes/notes-list';
 @import './components/modal';
 @import './components/notes/upload-form';

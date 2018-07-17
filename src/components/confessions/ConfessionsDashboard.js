@@ -10,7 +10,7 @@ class ConfessionsDashboard extends React.Component {
 
         this.state = {
             modalOpen: false
-        }
+        };
 
         this.handleAddConfession = this.handleAddConfession.bind(this);
         this.handleModalClose = this.handleModalClose.bind(this);
@@ -29,8 +29,11 @@ class ConfessionsDashboard extends React.Component {
             <div className="dashboard dashboard--confessions">
                 <div className="dashboard__content">
                     <div className="dashboard__header">
-                        <h2 className="dashboard__title">Confessions Dashboard</h2>
-                        <button className="button dashboard--notes__button" onClick={this.handleAddConfession}>
+                        <h2 className="dashboard__title">Confessions</h2>
+                        <button
+                            className="button dashboard--notes__button"
+                            onClick={this.handleAddConfession}
+                        >
                             Add Confession
                         </button>
                     </div>

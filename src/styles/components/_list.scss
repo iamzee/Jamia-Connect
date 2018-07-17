@@ -1,0 +1,32 @@
+.list {
+    width: 100%;
+    padding: $m-size;
+
+    &--notes {
+        background: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+        );
+
+        @media screen and (max-width: 480px) {
+            padding: $m-size;
+        }
+    }
+    &--confessions {
+        background: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+        );
+        @media screen and (max-width: 480px) {
+            padding: $m-size 0;
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}

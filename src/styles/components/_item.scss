@@ -1,50 +1,57 @@
-.notes-list {
-    height: 80rem;
-    width: 100%;
-    background: linear-gradient(
-        to right bottom,
-        $color-primary-light,
-        $color-primary-dark
-    );
-    padding: $m-size;
-}
-.notes-list-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.note-item {
+.item {
     background-color: $color-grey-light-3;
     border-radius: 3px;
     padding: $s-size;
     box-shadow: 0 $s-size $m-size rgba(0, 0, 0, 0.3);
-    margin-right: $s-size;
     margin-bottom: $m-size;
+    margin-right: $s-size;
     @media screen and (max-width: 480px) {
-        margin-right: $s-size;
-        margin-bottom: $s-size;
-        flex: 1;
+        flex-basis: 100%;
+        margin-right: 0;
     }
+
     &__topic {
         display: block;
         padding-bottom: 0.4rem;
         transition: all 0.2s ease-out;
+        text-align: center;
         &:link,
         &:visited {
             color: $color-grey-dark-1;
             font-size: 2rem;
             font-weight: 400;
             text-decoration: none;
-            @media screen and (max-width: 1200px) {
+        }
+
+        &--notes {
+            &:link,
+            &:visited {
+                @media screen and (max-width: 1200px) {
+                    color: $color-primary;
+                    border-bottom: 1px solid $color-primary;
+                }
+            }
+
+            &:active,
+            &:hover {
                 color: $color-primary;
                 border-bottom: 1px solid $color-primary;
             }
         }
-        &:active,
-        &:hover {
-            color: $color-primary;
-            border-bottom: 1px solid $color-primary;
+
+        &--confessions {
+            &:link,
+            &:visited {
+                @media screen and (max-width: 1200px) {
+                    color: $color-tertiary;
+                    border-bottom: 1px solid $color-tertiary;
+                }
+            }
+            &:active,
+            &:hover {
+                color: $color-tertiary;
+                border-bottom: 1px solid $color-tertiary;
+            }
         }
     }
     &__extras {

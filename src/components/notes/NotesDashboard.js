@@ -29,7 +29,7 @@ class NotesDashboard extends React.Component {
             <div className="dashboard dashboard--notes">
                 <div className="dashboard__content">
                     <div className="dashboard__header">
-                        <h2 className="dashboard__title">Notes Dashboard</h2>
+                        <h2 className="dashboard__title">Notes</h2>
                         <button
                             onClick={this.handleUploadButton}
                             className="button dashboard--notes__button"

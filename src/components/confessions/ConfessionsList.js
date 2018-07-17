@@ -11,9 +11,9 @@ class ConfessionsList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="list list--confessions">
                 {this.props.confessions.length > 0 ? (
-                    <div>
+                    <div className="list__container">
                         {this.props.confessions.map(confession => (
                             <ConfessionsListItem
                                 key={confession.confessionId}
@@ -22,7 +22,9 @@ class ConfessionsList extends React.Component {
                         ))}
                     </div>
                 ) : (
-                    <p>Fetching Confessions</p>
+                    <p style={{ fontSize: '3.2rem' }}>
+                        Fetching Confessions...
+                    </p>
                 )}
             </div>
         );
