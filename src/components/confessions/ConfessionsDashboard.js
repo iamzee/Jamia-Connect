@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AddConfessionForm from './AddConfessionForm';
+import ConfessionsList from './ConfessionsList';
 import Modal from './../Modal';
 
 class ConfessionsDashboard extends React.Component {
@@ -39,6 +40,7 @@ class ConfessionsDashboard extends React.Component {
                         component={AddConfessionForm}
                     />
                 </div>
+                <ConfessionsList />
             </div>
         );
     }

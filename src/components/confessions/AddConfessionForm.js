@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import { startAddConfession } from './../../actions/confessions';
+import { startAddConfession, startSetConfessions } from './../../actions/confessions';
 
 class AddConfessionForm extends React.Component {
     constructor(props) {
