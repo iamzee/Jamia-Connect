@@ -122,9 +122,9 @@ class UploadNotesForm extends React.Component {
 
     render() {
         return (
-            <form className="upload-form" onSubmit={this.onSubmit}>
+            <form className="form" onSubmit={this.onSubmit}>
                 <select
-                    className="upload-form__input upload-form__input--select"
+                    className="form__input form__input--notes form__input--select"
                     value={this.state.branch}
                     onChange={this.onBranchChange}
                 >
@@ -137,32 +137,32 @@ class UploadNotesForm extends React.Component {
                     <option value="civil">Civil Engineering</option>
                 </select>
                 <input
-                    className="upload-form__input"
+                    className="form__input form__input--notes"
                     type="text"
                     placeholder="Topic"
                     value={this.state.topic}
                     onChange={this.onTopicChange}
                 />
                 <input
-                    className="upload-form__input"
+                    className="form__input form__input--notes"
                     type="text"
                     placeholder="Teacher"
                     value={this.state.teacher}
                     onChange={this.onTeacherChange}
                 />
                 <input
-                    className="upload-form__input-file"
+                    className="form__input-file"
                     type="file"
                     onChange={this.onFileChange}
                 />
                 <button
-                    className="upload-form__input upload-form__upload-button"
+                    className="form__input form__button--notes"
                     type="submit"
                 >
                     {this.handleButtonText()}
                 </button>
                 {this.state.message && (
-                    <p className="upload-form__message">{this.state.message}</p>
+                    <p className="form__message">{this.state.message}</p>
                 )}
             </form>
         );

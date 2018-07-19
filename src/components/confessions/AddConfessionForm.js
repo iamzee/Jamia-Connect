@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import { startAddConfession, startSetConfessions } from './../../actions/confessions';
+import {
+    startAddConfession,
+    startSetConfessions
+} from './../../actions/confessions';
 
 class AddConfessionForm extends React.Component {
     constructor(props) {
@@ -40,10 +43,9 @@ class AddConfessionForm extends React.Component {
                 uid: this.props.user.uid,
                 displayName: this.props.user.displayName,
                 confessedAt: moment().valueOf()
-            }
+            };
 
             this.props.dispatch(startAddConfession(confession));
-
         } else {
             this.setState(() => ({ error: 'Confession cant be empty!!' }));
         }
@@ -51,27 +53,35 @@ class AddConfessionForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
-                    <textarea
-                        placeholder="Confess it!"
-                        value={this.state.confessionText}
-                        onChange={this.onConfessionTextChange}
-                    />
+            <form className="form" onSubmit={this.onSubmit}>
+                <textarea
+                    rows="5"
+                    column="35"
+                    className="form__input form__input--confessions"
+                    placeholder="Confess it!"
+                    value={this.state.confessionText}
+                    onChange={this.onConfessionTextChange}
+                />
+                <div className="form__input-radio">
                     <input
+                        className="form__input form__input--radio"
                         type="radio"
                         id="isName"
                         onChange={this.onRadioChange}
                     />
-                    <label for="isName">Want to mention your name...</label>
-                    <button>Add Confession</button>
-                </form>
-            </div>
+                    <label className="form__input-radio__label" for="isName">
+                        Want to mention your name...
+                    </label>
+                </div>
+                <button className="form__input form__button--confessions">
+                    Add Confession
+                </button>
+            </form>
         );
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     user: state.user
 });
 

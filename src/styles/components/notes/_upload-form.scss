@@ -1,18 +1,46 @@
-.upload-form {
+.form {
     display: flex;
     flex-direction: column;
 
     &__input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+
         display: block;
         outline: none;
         padding: $s-size;
         font-size: 1.6rem;
-        background-color: #fff;
+
         color: $color-grey-dark-1;
         border: none;
-        border-bottom: 2px solid $color-primary;
+
         border-radius: 3px;
         margin-bottom: $s-size;
+
+        &--notes {
+            border-bottom: 2px solid $color-primary;
+            background-color: #fff;
+        }
+
+        &--confessions {
+            border-bottom: 2px solid $color-tertiary;
+            background-color: #fff;
+        }
+
+        &--radio {
+            padding: 0.8rem;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            transition: all 0.2s ease-in-out;
+            margin-right: $s-size;
+
+            &:checked {
+                border: 3px solid $color-tertiary-dark;
+            }
+        }
 
         &--select {
             -webkit-appearance: none;
@@ -39,20 +67,39 @@
         }
     }
 
-    &__upload-button {
-        color: $color-primary;
-        border: 2px solid $color-primary;
+    &__button {
+        color: #fff;
+        &--notes {
+            background: linear-gradient(
+                to right,
+                $color-primary-light,
+                $color-primary-dark
+            );
+        }
+        &--confessions {
+            background: linear-gradient(
+                to right,
+                $color-tertiary-light,
+                $color-tertiary-dark
+            );
+        }
     }
-
     &__modal-close-button {
         width: 100%;
         color: #f93636;
         border: 2px solid #f93636;
     }
-
     &__message {
         font-size: 1.2rem;
         color: #f93636;
         margin-bottom: $s-size;
+    }
+    &__input-radio {
+        display: flex;
+        align-items: center;
+        &__label {
+            font-size: 1.2rem;
+            color: #fff;
+        }
     }
 }
